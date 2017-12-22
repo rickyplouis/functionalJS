@@ -7,9 +7,10 @@
  */
 
 function countWords(inputWords) {
-  var resObj = {};
-  inputWords.map( (word) => resObj[word] = inputWords.reduce( (acc, val) => { return val === word ? ++acc : acc}, 0));
-  return resObj
+  return inputWords.reduce( (wordMap, word) => {
+    wordMap[word] = inputWords.reduce( (count, currWord) => {return word  === currWord ? ++count : count}, 0)
+    return wordMap
+  },{})
 }
 
 module.exports = countWords
