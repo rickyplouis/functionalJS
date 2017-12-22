@@ -5,8 +5,7 @@
  */
 
 function duckCount() {
-  let args = [].slice.call(arguments)
-  return args.reduce( function(count, duckLikeObj) {
+  return [].slice.call(arguments).reduce( function(count, duckLikeObj) {
     return isADuck.call(duckLikeObj) ? count + 1 : count
   },0)
 }
